@@ -13,3 +13,6 @@ Aplicativo e API para gestão de vendas de microgreens, promovendo agricultura u
 - Carrinho, checkout e histórico de pedidos.
 - Perfil do usuário.
 
+## Screenshots
+![Tela Detalhe do Produto]([./screenshots/tela-principal.png](https://github.com/Lucas-7s/salesApp-API-inJava/raw/main/DetalhesMockup.jpg))
+![Detalhes do Produto](./screenshots/detalhes-produto.png)
