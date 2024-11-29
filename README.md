@@ -15,4 +15,4 @@ Aplicativo e API para gestão de vendas de microgreens, promovendo agricultura u
 
 ## Screenshots
 ![Tela Detalhe do Produto](https://github.com/Lucas-7s/salesApp-API-inJava/blob/main/DetalhesMockup.jpg)
-![Detalhes do Produto](./screenshots/detalhes-produto.png)
+![Detalhes do Produto](https://github.com/Lucas-7s/salesApp-API-inJava/blob/main/Telas123.jpg)
