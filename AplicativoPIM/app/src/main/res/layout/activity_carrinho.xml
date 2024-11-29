@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.Carrinho.Carrinho">
+
+
+    <!-- Barra superior com botão de voltar e título -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/simplestoolbarCarrinho"
+        app:title="MicroFarms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints"
+        app:titleTextColor="@color/white"
+        />
+
+
+    <!-- ScrollView para o conteúdo -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/simplestoolbarCarrinho"
+        app:layout_constraintBottom_toTopOf="@+id/fimDaPagCarrinho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- FrameLayout para sobreposição de elementos -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp">
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/carrinhoVazioTxtV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O carrinho está vazio 🛒"
+                android:visibility="gone"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_gravity="center" />
+
+            <!-- Texto "Meus Pedidos" -->
+            <TextView
+                android:id="@+id/tituloCarrinhoTxtV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carrinho"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:padding="7dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listaCompraRclV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tituloCompraTxtV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/subtotal"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subtotalValorTxtV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preço1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:paddingVertical="16dp">
+
+
+                <!-- Campo de texto para receber informações -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+                        <EditText
+                            android:id="@+id/CupomEdt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:inputType="text"
+                            android:autofillHints="username"
+                            android:hint="@string/BtnCodigo1"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:minHeight="48dp"
+                            android:minWidth="48dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <Button
+                            android:id="@+id/aplicarCupomBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/white_b"
+                            android:text="@string/BtnCodigo2"
+                            android:textColor="@color/green_c" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/grey_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+
+                <!-- Título: Carrinho Total -->
+                <TextView
+                    android:id="@+id/tituloCarrinho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:text="@string/carrinho_total"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"/>
+
+                <!-- Subtotal -->
+                <LinearLayout
+                    android:id="@+id/priceContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/subtotalLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/subtotal"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                    <!-- Frete -->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/subtotal0_R"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/subtotalValor2TxtV"
+                            android:layout_width="70sp"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            android:text="@string/subtotal0_00"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12sp"
+                    app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/freteLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/frete_carrinho"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/taxa_fixa0_T"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                                app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/taxa_fixa0_R"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/freteTaxaValorTxtV"
+                            android:layout_width="70sp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textEnd"
+                            android:text="@string/taxa_fixa0_00"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/descontoLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/desconto_carrinho"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+                        <TextView
+                            android:id="@+id/cupomTxtV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desconto_cupom"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/taxa_fixa0_R"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/descontoValorTxtV"
+                            android:layout_width="70sp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textEnd"
+                            android:text="@string/desconto_fixo"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divisor -->
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ABABAB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/freteTaxaValorTxtV" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <!-- Total -->
+                        <TextView
+                            android:id="@+id/totalLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_carrinho"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/taxa_fixa0_R"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/subtotalLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/subtotalLabel"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/totalValorTxtV"
+                            android:layout_width="70sp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textEnd"
+                            android:text="@string/total_valor0_00"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divisor -->
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ABABAB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/freteTaxaValorTxtV" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/addToCartButton2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Definir o botão na parte inferior -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <!-- Texto do botão -->
+            <TextView
+                android:id="@+id/finalizarCompraBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/orange"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/finalizar_compra"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Espaço no final da página -->
+    <View
+        android:id="@+id/fimDaPagCarrinho"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

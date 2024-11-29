@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.Checkout">
+
+    <!-- Barra superior com botão de voltar e título -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/simplestoolbarCheckout"
+        app:title="MicroFarms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints"
+        app:titleTextColor="@color/white"
+        />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/simplestoolbarCheckout"
+        app:layout_constraintBottom_toTopOf="@+id/fimDaPagCheckout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#F5F5F5">
+
+            <!-- Texto "Meus Pedidos" -->
+            <TextView
+                android:id="@+id/meus_pedidos_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checkout"
+                android:textSize="22sp"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:padding="7dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <!-- Detalhes do Pedido -->
+                <TextView
+                    android:id="@+id/tv_detalhes_pedido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detalhes_do_pedido"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Primeiro Nome -->
+                <EditText
+                    android:id="@+id/et_primeiro_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/primeiro_nome"
+                    android:autofillHints="username"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Sobrenome -->
+                <EditText
+                    android:id="@+id/et_sobrenome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sobrenome"
+                    android:autofillHints="username"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo CEP -->
+                <EditText
+                    android:id="@+id/et_cep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cep"
+                    android:inputType="number"
+                    android:autofillHints="postalCode"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Endereço -->
+                <EditText
+                    android:id="@+id/et_endereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/endereço"
+                    android:autofillHints="postalAddress"
+                    android:inputType="textPostalAddress"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Cidade -->
+                <EditText
+                    android:id="@+id/et_cidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cidade"
+                    android:inputType="text"
+                    android:autofillHints="addressCity"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+
+                <!-- Campo Telefone para Contato -->
+                <EditText
+                    android:id="@+id/et_telefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/telefone_para_contato"
+                    android:inputType="phone"
+                    android:autofillHints="phone"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Email -->
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/e_mail"
+                    android:inputType="textEmailAddress"
+                    android:autofillHints="emailAddress"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp" />
+
+            </LinearLayout>
+
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <!-- Campo Mensagem para o Fornecedor -->
+                <EditText
+                    android:id="@+id/et_mensagem_fornecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mensagem"
+                    android:autofillHints="name"
+                    android:inputType="textMultiLine"
+                    android:minLines="3" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/Total1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_weight="1"
+                    android:text="@string/subtotal_checkout"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/Totalfeetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ 28,80"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_frete_gratis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frete_gratis_acima100"
+                    android:textColor="#669900"
+                    android:textSize="13sp"
+                    android:paddingBottom="8dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_taxa_entrega"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/taxa_de_entrega10"
+                    android:textColor="#CC0000"
+                    android:textSize="13sp"
+                    android:paddingBottom="16dp" />
+
+
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TotalCheckout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_weight="1"
+                    android:text="@string/total2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TotalValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ 38,80"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+
+                <!-- Seleção de método de pagamento -->
+                <TextView
+                    android:id="@+id/tv_pagamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pagamento_checkout"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_metodo_pagamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/metodos_pagamento"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+                <!-- Dados para Cartão -->
+                <LinearLayout
+                    android:id="@+id/layout_cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cartao_checkout"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_numero_cartao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/numero_cartao_checkout"
+                        android:inputType="number"
+                        android:autofillHints="creditCardNumber"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_validade_cartao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/mm_aa_checkout"
+                        android:inputType="text"
+                        android:autofillHints="creditCardExpirationDate"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_cvv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/codigo_seguranca_checkout"
+                        android:inputType="numberPassword"
+                        android:autofillHints="creditCardSecurityCode"
+                        android:paddingBottom="24dp" />
+
+                </LinearLayout>
+
+                <!-- Dados para PIX -->
+                <LinearLayout
+                    android:id="@+id/layout_pix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pix_checkout"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_chave_pix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/chave_pix_checkout"
+                        android:inputType="text"
+                        android:autofillHints="phone"
+                        android:paddingBottom="24dp" />
+                </LinearLayout>
+
+                <!-- Dados para pagamento entrega -->
+                <LinearLayout
+                    android:id="@+id/layout_pagamento_entrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pagamento_entrega"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp" />
+
+                </LinearLayout>
+
+
+
+                <!-- Botão de fazer pedido -->
+                <Button
+                    android:id="@+id/btn_fazer_pedido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fazer_pedido"
+                    android:textAllCaps="false"
+                    android:textColor="#81C408"
+                    android:textColorLink="@android:color/transparent" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Espaço no final da página -->
+    <View
+        android:id="@+id/fimDaPagCheckout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

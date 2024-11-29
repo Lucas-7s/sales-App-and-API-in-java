@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/custom_cart_icon_layout.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content">
+
+<!-- Ícone do carrinho -->
+<ImageView
+    android:id="@+id/cart_icon"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:layout_marginTop="5dp"
+    android:src="@drawable/ic_cart" /> <!-- Substitua por seu ícone de carrinho -->
+
+<!-- Contador do carrinho -->
+<TextView
+    android:id="@+id/cart_badge"
+    android:layout_width="15dp"
+    android:layout_height="15dp"
+    android:layout_gravity="end|top"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="0dp"
+    android:background="@drawable/circle_background"
+    android:gravity="center"
+    android:paddingHorizontal="1dp"
+    android:paddingBottom="1dp"
+    android:textColor="@android:color/white"
+    android:textSize="9sp"
+    android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_card"
+        android:title="Carrinho"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_cart"/>
+
+    <item
+        android:id="@+id/action_menu"
+        android:title="Menu"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_menu">
+
+        <!-- Submenu que aparece ao clicar no ícone de três risquinhos -->
+        <menu>
+            <item
+                android:id="@+id/action_perfil"
+                android:title="Perfil"  />
+            <item
+                android:id="@+id/action_meus_pedidos"
+                android:title="Meus Pedidos" />
+            <item
+                android:id="@+id/action_fale_conosco"
+                android:title="Fale Conosco" />
+            <item
+                android:id="@+id/action_logout"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+
+</menu>

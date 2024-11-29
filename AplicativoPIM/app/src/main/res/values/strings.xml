@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">AplicativoPIM</string>
+    <string name="checkout">Checkout</string>
+    <string name="background">TODO</string>
+    <string name="detalhes_do_pedido">Detalhes do Pedido</string>
+    <string name="primeiro_nome">Primeiro Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="cep">CEP</string>
+    <string name="endereço">Endereço</string>
+    <string name="cidade">Cidade</string>
+    <string name="telefone_para_contato">Telefone para contato</string>
+    <string name="e_mail">E-mail</string>
+    <string name="criar_uma_nova_conta">Criar uma nova conta</string>
+    <string name="enviarED">Enviar para um endereço diferente</string>
+    <string name="mensagem">Mensagem para o fornecedor (opcional)</string>
+    <string name="subtotal_checkout">SUBTOTAL:</string>
+    <string name="preço1">R$0.00</string>
+    <string name="entrega">Entrega:</string>
+    <string name="frete">Frete grátis</string>
+    <string name="taxa">Taxa fixa para qualquer local de SP: R$ 0,00</string>
+    <string name="retirar">Retirar na Loja: R$ 0,00</string>
+    <string name="total2">TOTAL A PAGAR:</string>
+    <string name="frete_gratis_acima100">Frete grátis para compras acima de R$ 100,00</string>
+    <string name="taxa_de_entrega10">Taxa de entrega: R$ 10,00</string>
+    <string name="pagamento_checkout">Pagamento</string>
+    <string name="cartao_checkout">Dados para Cartão</string>
+    <string name="numero_cartao_checkout">Informe o número do cartão</string>
+    <string name="mm_aa_checkout">MM/AA</string>
+    <string name="codigo_seguranca_checkout">Código de segurança</string>
+    <string name="pix_checkout">Dados para PIX</string>
+    <string name="chave_pix_checkout">Informe a chave PIX</string>
+    <string name="pagamento_entrega">O pagamento sera realizado na entrega</string>
+    <string name="fazer_pedido">FAZER PEDIDO</string>
+
+    <!-- Strings carrinho -->
+
+    <string name="header_da_tela">Header da tela</string>
+    <string name="carrinho">Carrinho</string>
+    <string name="voltar">Voltar</string>
+    <string name="total">Total</string>
+    <string name="preço">Preço</string>
+    <string name="preço2">R$0.00</string>
+    <string name="Quantidade">Quantidade</string>
+    <string name="BtnRemover">-</string>
+    <string name="BtnAdicionar">+</string>
+    <string name="BtnQuantidade">1</string>
+    <string name="BtnCodigo1">Inserir cupom</string>
+    <string name="BtnCodigo2">Aplicar cupom</string>
+    <string name="carrinho_total">Fechamento</string>
+    <string name="desconto_carrinho">Desconto:</string>
+    <string name="desconto_cupom">Cupom:</string>
+    <string name="desconto_fixo">0.00</string>
+    <string name="subtotal">Compra:</string>
+    <string name="subtotal0_R">R$</string>
+    <string name="subtotal0_00">0.00</string>
+    <string name="frete_carrinho">Frete:</string>
+    <string name="taxa_fixa0_T">Para Todo Brasil</string>
+    <string name="taxa_fixa0_R">R$</string>
+    <string name="taxa_fixa0_00">10.00</string>
+    <string name="total_carrinho">Total:</string>
+    <string name="total_valor0_00">0.00</string>
+    <string name="finalizar_compra">Finalizar Compra</string>
+
+    <!-- Strings Meus Pedidos -->
+
+    <string name="meus_pedidos_2">Meus Pedidos</string>
+    <string name="status_dos_pedidos">Acompanhe o status dos seus pedidos e veja os detalhes.</string>
+    <string name="pedido_meus_pedidos">Valor</string>
+    <string name="data_meus_pedidos">Data</string>
+    <string name="valor_meus_pedidos">Valor</string>
+    <string name="status_meus_pedidos">Status</string>
+    <string name="acoes_meus_pedidos">Ações</string>
+    <string name="meus_pedidos_teste">#12345</string>
+    <string name="_01_09_2024_meus_pedidos">01/09/2024</string>
+    <string name="meus_pedidos_preco_teste">R$ 150,00</string>
+    <string name="entregue_meus_pedidos">Entregue</string>
+    <string name="ver_detalhes1_meus_pedidos">Ver Detalhes</string>
+    <string name="_12346_meus_pedidos">12346</string>
+    <string name="data_pedido_teste">03/09/2024</string>
+    <string name="_200_00_meus_pedidos">R$ 200,00</string>
+    <string name="em_transito_meus_pedidos">Em Trânsito</string>
+    <string name="ver_detalhes2_meus_pedidos">Ver Detalhes</string>
+    <string name="_12347_meus_pedidos">12347</string>
+    <string name="_05_09_2024_meus_pedidos">05/09/2024</string>
+    <string name="_75_00_meus_pedidos">R$ 75,00</string>
+    <string name="cancelado_meus_pedidos">Cancelado</string>
+    <string name="ver_detalhes3_meus_pedidos">Ver Detalhes</string>
+
+
+    <!-- Strings Detalhes pedidos-->
+
+    <string name="detalhes_do_pedido2">Detalhes do Pedido</string>
+    <string name="numero_do_pedido">Número do Pedido:</string>
+    <string name="produto_carrinho">Produto</string>
+    <string name="nome_carrinho">Nome</string>
+    <string name="preco_carrinho">Preço</string>
+    <string name="quantidade_carrinho">Quantidade</string>
+    <string name="total_carrinho2">Total</string>
+    <string name="produto_carrinho2">Produto</string>
+    <string name="carrinho0_00">R$0.00</string>
+    <string name="carrinho_0_00">0</string>
+    <string name="carrinho0_003">R$0.00</string>
+    <string name="icone_pedido_realizado">Icone Pedido Realizado</string>
+    <string name="pedido_realizado">Pedido Realizado</string>
+    <string name="icone_em_transito">Icone Em Transito</string>
+    <string name="em_transito">Em Trânsito</string>
+    <string name="icone_entregue">Icone Entregue</string>
+    <string name="text_entregue">Entregue</string>
+
+    <!-- Detalhe Produto -->
+
+    <string name="image_principal">Imagem Principal</string>
+    <string name="mini_image1">Mini imagem1</string>
+    <string name="mini_image2">Mini imagem2</string>
+    <string name="mini_image3">Mini imagem3</string>
+    <string name="mini_image4">Mini imagem4</string>
+    <string name="mini_image5">Mini imagem5</string>
+    <string name="product_name">MicroFruit Morango</string>
+    <string name="product_price">R$ 38,00</string>
+    <string name="product_installments">Em até 12x R$ 7,36</string>
+    <string name="product_rating">4,7 / 5</string>
+    <string name="product_contador_menos">-</string>
+    <string name="product_contador_numero">1</string>
+    <string name="product_contador_mais">+</string>
+    <string name="description_title">Descrição</string>
+    <string name="product_description">O MicroFruit Morango é a escolha perfeita para quem busca sabor e praticidade. Cultivado com as melhores práticas agrícolas, nossos morangos são selecionados com rigor para garantir a máxima qualidade.</string>
+    <string name="user_icon">Avatar do Usuário</string>
+    <string name="user_name">Ana Julia</string>
+    <string name="user_quality">Qualidade: boa</string>
+    <string name="user_quality2">Útil</string>
+    <string name="user_quality_numero">21</string>
+    <string name="user_review">Muito bom o produto, recebi bem rápido.\nO sabor é muito bom, comprei para provar e recomendo, logo comprarei novamente!</string>
+    <string name="favorite_button_description">Favoritar</string>
+    <string name="share_button_description">Compartilhar</string>
+    <string name="quantity">Quantidade</string>
+    <string name="txt_add_card">Adicionar ao Carrinho</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+</resources>
